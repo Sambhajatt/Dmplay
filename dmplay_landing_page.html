@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090817">
+<title>DMPLAY | Play • Explore • Enjoy</title>
+<style>
+:root{--bg:#080716;--panel:#121027;--panel2:#191431;--gold:#ffd45a;--violet:#8d4dff;--pink:#f14cff;--green:#32e6a0;--muted:#b9b3cc;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#32145a 0,transparent 35%),radial-gradient(ellipse at 0% 30%,#161b50 0,transparent 35%),var(--bg);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.logo{font-size:29px;font-weight:950;letter-spacing:-1.5px;font-style:italic}.logo span{color:var(--gold)}.crown{color:var(--gold);font-size:18px;margin-right:5px}
+.nav{display:flex;gap:26px;color:#ddd7ed;font-size:14px}.nav a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 23px;border-radius:14px;font-weight:850;letter-spacing:.2px;transition:.2s;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.primary{background:linear-gradient(100deg,#ffdc68,#ff9c35);color:#21142a;box-shadow:0 8px 28px #ffb6383b}.secondary{border-color:#a76aff;background:#1b1433;color:#fff}.telegram{background:#159bd1;color:#fff}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:66px 0 48px;min-height:550px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #7f54d8;background:#21143c;color:#e5d8ff;padding:8px 13px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(43px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:22px 0 18px;font-weight:950}h1 span{background:linear-gradient(90deg,#fff0a7,#ffc33d 55%,#ff70c9);background-clip:text;color:transparent}
+.lead{font-size:17px;line-height:1.7;color:#c7c1d7;max-width:540px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0 20px}.tiny{font-size:12px;color:#aaa2bf}
+.art{min-height:400px;position:relative;display:grid;place-items:center}
+.glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#8b38ff80,transparent 68%);filter:blur(12px)}
+.game-card{position:relative;width:min(100%,430px);padding:24px;border:1px solid #8e63ff8c;border-radius:28px;background:linear-gradient(145deg,#25164d,#0e1026 70%);box-shadow:0 24px 80px #0009,0 0 45px #8b42ff35;transform:rotate(2deg);overflow:hidden}
+.game-card:before{content:"";position:absolute;inset:-50% -20%;background:linear-gradient(110deg,transparent 35%,#ffffff12 48%,transparent 60%);transform:rotate(20deg)}
+.game-top{display:flex;justify-content:space-between;align-items:center;color:#cfc5e7;font-size:12px;font-weight:800;letter-spacing:1px}
+.game-title{font-size:30px;font-weight:950;margin:18px 0 4px}.game-sub{font-size:12px;color:#c3b8da}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:23px}
+.tile{background:linear-gradient(145deg,#28204c,#121329);border:1px solid #6c4ab2;border-radius:17px;padding:18px 10px;text-align:center}
+.tile .emoji{font-size:35px;display:block;margin-bottom:8px}.tile b{font-size:14px;letter-spacing:.7px}.tile small{display:block;color:#a9a0bf;margin-top:4px;font-size:10px}
+.coin{position:absolute;color:#ffcf4d;text-shadow:0 0 18px #ffba28;font-size:35px}.coin.one{top:30px;right:3%}.coin.two{bottom:25px;left:1%;font-size:25px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 55px}
+.stat{background:#ffffff08;border:1px solid var(--line);border-radius:17px;padding:18px;text-align:center}.stat strong{display:block;color:var(--gold);font-size:23px}.stat span{color:#bcb5ce;font-size:12px}
+section{padding:36px 0 60px}.section-head{text-align:center;margin-bottom:26px}.section-head h2{font-size:32px;margin:0 0 9px;letter-spacing:-1px}.section-head p{color:var(--muted);margin:0}
+.games{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.game{padding:22px 15px;text-align:center;border:1px solid var(--line);background:linear-gradient(150deg,#1c1736,#101020);border-radius:20px}.game .emoji{font-size:36px}.game h3{margin:10px 0 5px}.game p{margin:0;color:#aaa3bd;font-size:12px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.info{padding:25px;border:1px solid var(--line);background:var(--panel);border-radius:20px}.info h3{margin:0 0 8px}.info p{margin:0;color:#bdb6ce;line-height:1.6;font-size:14px}.amount{font-size:30px;font-weight:950;color:var(--gold);margin:8px 0}
+.cta{margin:20px 0 70px;padding:34px;border:1px solid #7951c5;border-radius:25px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#6330a966,transparent 65%),#151027}.cta h2{font-size:30px;margin:0 0 10px}.cta p{color:#c2bad2;margin:0 0 22px}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:#a9a2b9;font-size:12px;line-height:1.7}.footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.disclaimer{margin-top:14px;max-width:900px}
+@media(max-width:760px){.nav{display:none}.hero{grid-template-columns:1fr;padding:44px 0 25px;gap:12px}.art{min-height:350px}.game-card{max-width:390px}.stats{margin-bottom:30px}.games{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.cta{padding:28px 18px}}
+@media(max-width:390px){.actions .btn{width:100%}.stats{gap:7px}.stat{padding:13px 6px}.stat strong{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#"><span class="crown">♛</span>DM<span>PLAY</span></a>
+  <nav class="nav"><a href="#games">Games</a><a href="#details">Deposit & Withdrawal</a><a href="#support">Support</a></nav>
+  <a class="btn primary" href="https://www.dmplay20.com/#/register?invitationCode=29959168138" target="_blank" rel="noopener">Register ↗</a>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">✦ WELCOME TO DMPLAY</div>
+    <h1>PLAY YOUR WAY.<br><span>OWN THE MOMENT.</span></h1>
+    <p class="lead">Explore popular quick-play games in one place. Discover Wingo, Aviator, Crash and more with a clean, mobile-friendly gaming experience.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://www.dmplay20.com/#/register?invitationCode=29959168138" target="_blank" rel="noopener">CREATE ACCOUNT&nbsp; ↗</a>
+      <a class="btn secondary" href="https://www.dmplay20.com/#/register?invitationCode=29959168138" target="_blank" rel="noopener">LOGIN&nbsp; ↗</a>
+    </div>
+    <div class="tiny">Quick access • Mobile-friendly • Explore the game lobby</div>
+  </div>
+  <div class="art" aria-label="DMPLAY game selection illustration">
+    <div class="glow"></div><div class="coin one">✦</div><div class="coin two">●</div>
+    <div class="game-card">
+      <div class="game-top"><span>♛ DMPLAY</span><span>GAME LOBBY</span></div>
+      <div class="game-title">Choose Your Game</div><div class="game-sub">A selection of quick-play favourites</div>
+      <div class="tiles">
+        <div class="tile"><span class="emoji">🎡</span><b>WINGO</b><small>Quick rounds</small></div>
+        <div class="tile"><span class="emoji">🚀</span><b>AVIATOR</b><small>Flight-style game</small></div>
+        <div class="tile"><span class="emoji">💥</span><b>CRASH</b><small>Timing game</small></div>
+        <div class="tile"><span class="emoji">🎰</span><b>SLOTS</b><small>Slot-style games</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>4+</strong><span>POPULAR GAME TYPES</span></div>
+  <div class="stat"><strong>₹100</strong><span>STATED MINIMUM DEPOSIT</span></div>
+  <div class="stat"><strong>₹110</strong><span>STATED MINIMUM WITHDRAWAL</span></div>
+</div>
+
+<section id="games">
+  <div class="section-head"><h2>Explore the Game Zone</h2><p>Pick a category and view the available games on DMPLAY.</p></div>
+  <div class="games">
+    <div class="game"><div class="emoji">🎡</div><h3>Wingo</h3><p>Fast-round number game</p></div>
+    <div class="game"><div class="emoji">🚀</div><h3>Aviator</h3><p>Flight multiplier-style game</p></div>
+    <div class="game"><div class="emoji">💥</div><h3>Crash</h3><p>Timing-based game</p></div>
+    <div class="game"><div class="emoji">🎰</div><h3>Slots</h3><p>Classic slot-style games</p></div>
+  </div>
+</section>
+
+<section id="details">
+  <div class="section-head"><h2>Deposit & Withdrawal Info</h2><p>Minimum amounts supplied for this landing page.</p></div>
+  <div class="info-grid">
+    <div class="info"><h3>Minimum Deposit</h3><div class="amount">₹100</div><p>Minimum deposit amount stated for DMPLAY. Check the platform's payment page for current methods, fees and processing details before making a payment.</p></div>
+    <div class="info"><h3>Minimum Withdrawal</h3><div class="amount">₹110</div><p>Minimum withdrawal amount stated for DMPLAY. Actual eligibility, verification and processing time are subject to the platform's current terms.</p></div>
+  </div>
+</section>
+
+<section id="support" class="cta">
+  <h2>Need Help or Updates?</h2>
+  <p>Connect through the Telegram contact or join the channel for information.</p>
+  <div class="actions" style="justify-content:center">
+    <a class="btn telegram" href="https://t.me/sureshot750" target="_blank" rel="noopener">CONTACT TEACHER ↗</a>
+    <a class="btn secondary" href="https://t.me/sureshot750" target="_blank" rel="noopener">JOIN CHANNEL ↗</a>
+  </div>
+  <div class="tiny">For platform access, use the official DMPLAY link above.</div>
+</section>
+</main>
+
+<footer>
+  <div class="footrow"><div class="logo" style="font-size:22px"><span class="crown">♛</span>DM<span>PLAY</span></div><div>Play responsibly • 18+ only</div></div>
+  <div class="disclaimer">Gaming may involve financial risk. Participation is not a way to earn guaranteed income, and losses are possible. Play only if legally permitted in your location, set limits, and never use money needed for essentials. The deposit and withdrawal figures shown are informational and should be confirmed on the platform before use. This page is an independent promotional landing page and does not process payments or account registrations.</div>
+</footer>
+</div>
+</body>
+</html>
